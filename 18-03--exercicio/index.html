@@ -55,7 +55,7 @@
         <h1>Portal do Paciente</h1>
       </div>
       <div class="header__user">
-        <span id="user-name"></span>
+        <span id="user-name">Paciente</span>
         <button class="btn-logout" id="btn-logout">Sair</button>
       </div>
     </header>
@@ -72,6 +72,10 @@
     </main>
   </div>
 
+  <!-- Jonathan-Notas: carregamos o Axios via CDN para fazer requisições HTTP (Promise-based)
+       no app.js sem precisar de bundler (React/Node). O script vem ANTES do app.js para garantir
+       que a variável "axios" exista no momento em que o JavaScript inicializa. -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="app.js"></script>
 </body>
 
