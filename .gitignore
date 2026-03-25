@@ -1,0 +1,8 @@
+# Jonathan-Notas: Arquivos de estudo/local (não versionar)
+estudos-resumo-aulas.html
+
+# Jonathan-Notas: caches comuns
+.DS_Store
+Thumbs.db
+.vite/
+
