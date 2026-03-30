@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Jonathan-Notas: Header da tela de login.
-// Recebe dados via props (estrutura nativa do React) para desacoplar conteúdo da marcação.
+// Recebe dados via props para desacoplar conteúdo da marcação.
 export default function LoginHeader(props) {
   const { icon, title, subtitle } = props
 

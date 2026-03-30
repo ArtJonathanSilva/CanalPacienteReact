@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import './style.css'
 
-import LoadingSpinner from '../../components/dashboard-page/LoadingSpinner'
-import { get } from '../../services/api'
+import LoadingSpinner from '../../../components/LoadingSpinner'
+import { get } from '../../../services/api'
 
-// Jonathan-Notas: 30/03 — DashboardPage virou “página” do módulo dashboard.
+// Jonathan-Notas: 30/03 — DashboardPage como “página” do módulo dashboard.
 // Ele usa services/api.js e lê baseURL do .env via import.meta.env.
 export default function DashboardPage(props) {
   const { paciente, onLogout } = props

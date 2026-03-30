@@ -1,8 +1,7 @@
 import React from 'react'
-import ConsultaList from './list'
+import ConsultaList from './List'
 
 // Jonathan-Notas: Content centraliza título/contador e delega a lista.
-// Com isso, cada componente tem responsabilidade única.
 export default function ConsultaContent(props) {
   const { title, countId, listId, placeholder } = props
 

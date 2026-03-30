@@ -1,7 +1,6 @@
 import React from 'react'
 
-// Jonathan-Notas: List foi extraído para representar a área de cards.
-// Os cards continuam sendo inseridos dinamicamente pelo arquivo portal/app.js.
+// Jonathan-Notas: List representa a área de cards (pode virar um map() no futuro).
 export default function ConsultaList(props) {
   const { listId, placeholder } = props
 

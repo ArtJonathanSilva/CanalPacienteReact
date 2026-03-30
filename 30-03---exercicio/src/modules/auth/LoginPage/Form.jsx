@@ -1,36 +1,24 @@
 import React, { useState } from 'react'
-import InputField from './InputField'
-import { post } from '../../services/api'
+import InputField from '../../../components/InputField'
+import { post } from '../../../services/api'
 
 // Jonathan-Notas: Form separado para facilitar manutenção e reaproveitamento.
-// IDs e classes foram preservados para manter compatibilidade com initPortal() (DOM + axios).
+// Controlled inputs: os valores ficam no estado (useState), não “presos” no DOM.
 export default function LoginForm(props) {
   const { carteirinhaLabel, senhaLabel, submitText, setPaciente } = props
 
-  // Jonathan-Notas: Estado (useState) guarda o valor atual dos inputs.
-  // Antes: o valor ficava "preso" no DOM. Agora: o React controla (controlled inputs).
-  // Benefício: o submit consegue acessar os dados sem precisar querySelector.
   const [carteirinha, setCarteirinha] = useState('')
   const [senha, setSenha] = useState('')
-
-  // Jonathan-Notas: Renderização condicional depende de estado.
-  // Se error tiver conteúdo, mostramos a mensagem. Se estiver vazio, não renderiza nada.
   const [error, setError] = useState('')
 
-  // Jonathan-Notas: 30/03 — removemos URL hardcoded. Agora vem do .env via service (services/api.js).
-
-  // Jonathan-Notas: Evento de submit (onSubmit) é a forma nativa do React lidar com envio do form.
-  // Usamos async/await para evitar "promise hell" (cadeias longas de .then/.catch).
+  // Jonathan-Notas: async/await evita “promise hell” (muitos .then/.catch encadeados).
+  // O service (services/api.js) centraliza o axios + baseURL do .env (VITE_API_URL).
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
 
     try {
       const data = await post('/login', { carteirinha, senha })
-      console.log('Login successful:', data)
-      // Jonathan-Notas: 27/03 — ao setar o paciente no App, o React troca de tela automaticamente
-      // por renderização condicional (App: if (!paciente) ... else ...).
-      // Isso substitui a abordagem antiga de "style.display" e DOM manual.
       setPaciente?.(data)
     } catch (err) {
       console.error('Login error:', err)

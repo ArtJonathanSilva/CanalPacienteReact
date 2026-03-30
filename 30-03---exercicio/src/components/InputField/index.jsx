@@ -1,9 +1,8 @@
 import React from 'react'
 
-// Jonathan-Notas: InputField é um componente reaproveitável para inputs do formulário.
-// Motivo: evitar duplicação do "form-group" (label + input + espaço de erro).
-// Como funciona: recebe tudo por props (id, type, placeholder, label, value, onChange),
-// e o LoginForm controla o estado (lifting state up).
+// Jonathan-Notas: Componente reutilizável (shared).
+// Motivo: campos de formulário aparecem em vários módulos (auth, consultas, etc).
+// Padrão: export default + index.jsx para facilitar imports curtos.
 export default function InputField(props) {
   const { id, type, placeholder, label, value, onChange } = props
 

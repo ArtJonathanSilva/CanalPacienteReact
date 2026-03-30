@@ -1,6 +1,7 @@
 import React from 'react'
 
-// Jonathan-Notas: loading simples para melhorar UX enquanto os dados são buscados no useEffect.
+// Jonathan-Notas: Componente reutilizável (shared).
+// Motivo: estado de carregamento (loading) aparece em várias páginas.
 export default function LoadingSpinner() {
   return (
     <div className="loading-spinner" role="status" aria-live="polite">
