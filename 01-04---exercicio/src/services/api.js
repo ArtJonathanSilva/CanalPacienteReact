@@ -4,7 +4,9 @@ import axios from 'axios'
 // Motivo: componentes focam em renderizar; service foca em comunicação com backend.
 const api = axios.create({
   // Jonathan-Notas: VITE_ é obrigatório no Vite para expor variável ao front-end.
-  baseURL: import.meta.env.VITE_API_URL,
+  // Jonathan-Notas: fallback proposital para evitar “quebrar” o projeto quando o .env não existe
+  // (ex.: aluno clonou o repo e ainda não criou o .env local).
+  baseURL: import.meta.env.VITE_API_URL || 'https://portal-unimed-fake-api.onrender.com',
 })
 
 export async function get(endpoint) {
