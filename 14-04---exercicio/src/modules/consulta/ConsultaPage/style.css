@@ -1,0 +1,10 @@
+/* Jonathan-Notas: CSS da página Consultas (módulo consulta).
+   Mantido simples; pode crescer conforme a página ganhar cards reais via API.
+*/
+
+.consulta-page .consultas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
